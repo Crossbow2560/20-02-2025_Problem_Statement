@@ -9,4 +9,9 @@ The sudoku solution **must follow all the following rules**:
 The `'.'` character indicates empty cells
 
 ## Input Format
-A two dimensional array consisting of either digits `1-4` or the character `'.'`
+A two dimensional array consisting of either digits `1-4` or the character `'.'`.
+
+## Constraints
+
+## Output Format
+A two dimensional array consisting of the digits `1-4`.
