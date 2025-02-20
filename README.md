@@ -21,11 +21,11 @@ A two dimensional array consisting of the digits `1-4`.
 <img src="https://github.com/user-attachments/assets/a71829fd-9492-454d-84b0-5a3257e76636" width="300" height="300"/>
 
 The input corresponding to the above board is:
-> Input: board = [['.', '.', '.', '3'], ['.', '4', '.', '.'], ['1', '.', '.', '4'], ['.', '.', '3', '.']]
+> **Input**: board = [['.', '.', '.', '3'], ['.', '4', '.', '.'], ['1', '.', '.', '4'], ['.', '.', '3', '.']]
 
 ### Output
 <img src="https://github.com/user-attachments/assets/1da70e00-7386-4aa1-969f-76a72200d473" width="300" height="300"/>
 The output corresponding to the above board is:
-> Output: ans = [['2', '1', '4', '3'], ['3', '4', '1', '2'], ['1', '3', '2', '4'], ['4', '2', '3', '1']]
+> **Output**: ans = [['2', '1', '4', '3'], ['3', '4', '1', '2'], ['1', '3', '2', '4'], ['4', '2', '3', '1']]
 
 
