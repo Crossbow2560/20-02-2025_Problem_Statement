@@ -18,7 +18,7 @@ A two dimensional array consisting of the digits `1-4`.
 
 ## Example
 ### Input
-<img src = "https://github.com/user-attachments/assets/a71829fd-9492-454d-84b0-5a3257e76636", height = "120", width = "120">
+<img src = "https://github.com/user-attachments/assets/a71829fd-9492-454d-84b0-5a3257e76636", height = "120", width = "120"></img>
 The input corresponding to the above board is:
 > Input: board = [['.', '.', '.', '3'], ['.', '4', '.', '.'], ['1', '.', '.', '4'], ['.', '.', '3', '.']]
 
