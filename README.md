@@ -126,7 +126,7 @@ ELSE:
 
 ***
 ## Implementation
-```
+```python
 def is_valid(board, row, col, num):
     """Check if placing num in board[row][col] is valid."""
     num = str(num)
