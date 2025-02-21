@@ -14,7 +14,7 @@ A two dimensional array consisting of either digits `1-4` or the character `'.'`
 ## Constraints
 - `board.length == 4`
 - `board[i].length == 4`
-- `board[i][j]` is a digit or a `'.'`.
+- `board[i][j]` is a digit `1-4` or a `'.'`.
 
 ## Output Format
 A two dimensional array consisting of the digits `1-4`.
