@@ -77,3 +77,101 @@ board = [['.', '3', '.', '.'],['2', '1', '.', '.'], ['.', '.', '1', '2'], ['.', 
 ```
 ans = [['4', '3', '2', '1'],['2', '1', '4', '3'], ['3', '4', '1', '2'], ['1', '2', '3', '4']]
 ```
+***
+## Solution
+Pseudocode:
+```
+FUNCTION is_valid(board, row, col, num):
+    CONVERT num to STRING
+
+    // Check if num is already in the row or column
+    IF num exists in board[row] OR num exists in column board[i][col] for i in range(4):
+        RETURN False
+
+    // Check 2×2 sub-grid constraints
+    SET start_row = (row // 2) * 2
+    SET start_col = (col // 2) * 2
+    FOR each cell (r, c) in the 2×2 sub-grid:
+        IF board[r][c] == num:
+            RETURN False
+
+    RETURN True  // Number placement is valid
+
+FUNCTION solve_sudoku(board):
+    FOR each row in range(4):
+        FOR each col in range(4):
+            IF board[row][col] is empty ('.'):  // Find the first empty cell
+                FOR each num in ['1', '2', '3', '4']:  // Try numbers 1 to 4
+                    IF is_valid(board, row, col, num):
+                        PLACE num in board[row][col]
+                        IF solve_sudoku(board):  // Recursively attempt solving
+                            RETURN True
+                        RESET board[row][col] to '.'  // Undo move (backtrack)
+                RETURN False  // No valid number found, backtrack
+    RETURN True  // Sudoku solved successfully
+
+FUNCTION print_board(board):
+    FOR each row in board:
+        PRINT row as a space-separated string
+
+// Example input board
+INITIALIZE board as a 4×4 grid with '.' representing empty cells
+
+IF solve_sudoku(board):
+    PRINT "Solved Sudoku:"
+    CALL print_board(board)
+ELSE:
+    PRINT "No solution exists."
+```
+
+***
+## Implementation
+```
+def is_valid(board, row, col, num):
+    """Check if placing num in board[row][col] is valid."""
+    num = str(num)
+    
+    # Check row and column constraints
+    if num in board[row] or num in [board[i][col] for i in range(4)]:
+        return False
+    
+    # Check 2x2 sub-grid constraints
+    start_row, start_col = (row // 2) * 2, (col // 2) * 2
+    sub_grid = [board[r][c] for r in range(start_row, start_row + 2) for c in range(start_col, start_col + 2)]
+    if num in sub_grid:
+        return False
+    
+    return True
+
+def solve_sudoku(board):
+    """Solve the 4x4 Sudoku using backtracking."""
+    for row in range(4):
+        for col in range(4):
+            if board[row][col] == '.':  # Find the first empty cell
+                for num in '1234':  # Try numbers 1 to 4
+                    if is_valid(board, row, col, num):
+                        board[row][col] = num  # Place number
+                        if solve_sudoku(board):  # Recursively solve
+                            return True
+                        board[row][col] = '.'  # Undo move (backtrack)
+                return False  # No valid number found
+    return True  # Solved successfully
+
+def print_board(board):
+    """Prints the Sudoku board in a readable format."""
+    for row in board:
+        print(" ".join(row))
+
+# Example input board
+board = [['.', '.', '.', '3'], 
+         ['.', '4', '.', '.'], 
+         ['1', '.', '.', '4'], 
+         ['.', '.', '3', '.']]
+
+# Solve the Sudoku and print the result
+if solve_sudoku(board):
+    print("Solved Sudoku:")
+    print_board(board)
+else:
+    print("No solution exists.")
+```
