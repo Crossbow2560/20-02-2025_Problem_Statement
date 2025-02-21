@@ -25,6 +25,7 @@ The input corresponding to the above board is:
 
 ### Output
 <img src="https://github.com/user-attachments/assets/1da70e00-7386-4aa1-969f-76a72200d473" width="300" height="300"/>
+
 The output corresponding to the above board is:
 > **Output**: ans = [['2', '1', '4', '3'], ['3', '4', '1', '2'], ['1', '3', '2', '4'], ['4', '2', '3', '1']]
 
